@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">GLA App 1.0</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="gla_app">GLA App</string>
+    <string name="gottalovealgeria_com">GottaLoveALgeria.com</string>
+</resources>
