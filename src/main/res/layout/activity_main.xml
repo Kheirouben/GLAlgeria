@@ -4,10 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
+
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="MainActivityText"
+        android:textColor="@android:color/holo_green_light"
+        android:elevation="5dp"
+        android:gravity="center"
+        android:keepScreenOn="true"
+        android:textStyle="bold"
+        android:textSize="50sp"
 
+
+        />
     <include
         layout="@layout/app_bar_main"
         android:layout_width="match_parent"
@@ -16,12 +29,15 @@
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:fitsSystemWindows="false"
         app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/activity_main_drawer" />
+        app:menu="@menu/activity_main_drawer"
+        android:transitionGroup="false"></android.support.design.widget.NavigationView>
+
+
 
 
 </android.support.v4.widget.DrawerLayout>

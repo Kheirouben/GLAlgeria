@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
+               android:transitionOrdering="together"
+               android:interpolator="@android:interpolator/anticipate_overshoot"
+    >
+    <changeBounds/>
+    <slide
+        android:interpolator="@android:interpolator/accelerate_decelerate"
+        android:slideEdge="top">
+        >
+        <targets>
+            <target android:targetId="@id/collapsing_toolbar"/>
+            <target android:targetId="@id/cardview"/>
+            <target android:targetId="@id/item_image" />
+        </targets>
+    </slide>
+
+</transitionSet>

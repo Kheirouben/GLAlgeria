@@ -5,7 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.example.kheireddineben.drawer.MainActivity">
+    tools:context="com.example.kheireddineben.drawer.MainActivity"
+    android:paddingLeft="10dp"
+    android:paddingTop="10dp"
+    android:paddingRight="10dp">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -19,8 +22,7 @@
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay"
-            android:elevation="6dp"
-            />
+            android:elevation="6dp" />
 
     </android.support.design.widget.AppBarLayout>
 
