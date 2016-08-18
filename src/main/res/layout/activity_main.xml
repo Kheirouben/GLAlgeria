@@ -4,23 +4,80 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="MainActivityText"
-        android:textColor="@android:color/holo_green_light"
-        android:elevation="5dp"
-        android:gravity="center"
-        android:keepScreenOn="true"
-        android:textStyle="bold"
-        android:textSize="50sp"
 
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        >
+        <fragment android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:fitsSystemWindows="true"
+            android:layout_height="match_parent"
+            class="com.google.android.gms.maps.MapFragment"></fragment>
 
-        />
+        <RelativeLayout
+            android:id="@+id/Video"
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:gravity="bottom|right"
+            android:focusable="false"
+            android:clickable="false"
+            android:layout_gravity="right|bottom">
+            <fragment
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:id="@+id/VideoFragment"
+            android:name="com.example.kheireddineben.drawer.Fragment.Video"
+            tools:layout="@layout/fragment_video"
+            android:gravity="right"
+
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="5dp">
+        </fragment>
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&lt;"
+                android:id="@+id/button2"
+                android:layout_alignBottom="@+id/VideoFragment"
+                android:layout_alignRight="@+id/VideoFragment"
+                android:layout_alignEnd="@+id/VideoFragment" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/Chat"
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:gravity="top|right"
+            android:focusable="false"
+            android:clickable="false"
+            android:layout_gravity="right|top">
+            <fragment
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:id="@+id/ChatFragment"
+                android:name="com.example.kheireddineben.drawer.Fragment.Video"
+                tools:layout="@layout/fragment_chat"
+                android:gravity="right"
+
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="5dp">
+            </fragment>
+
+        </RelativeLayout>
+
+    </FrameLayout>
     <include
         layout="@layout/app_bar_main"
         android:layout_width="match_parent"
@@ -36,8 +93,5 @@
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer"
         android:transitionGroup="false"></android.support.design.widget.NavigationView>
-
-
-
 
 </android.support.v4.widget.DrawerLayout>

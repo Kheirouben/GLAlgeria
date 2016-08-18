@@ -1,5 +1,8 @@
 package com.example.kheireddineben.drawer;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -10,11 +13,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+import com.example.kheireddineben.drawer.Fragment.GmapFragment;
+import com.example.kheireddineben.drawer.Fragment.Video;
 
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    Fragment fragment ;
 
 
     @Override
@@ -23,9 +30,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
-
-
-
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -41,16 +45,28 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        View video= (View) findViewById(R.id.button2);
+        video.setOnClickListener(videoSendOnClickListener);
 
 
 
-
-
+        //FragmentManager fm = getFragmentManager();
+        //fm.beginTransaction().replace(R.id.content_frame, new GmapFragment()).commit();
     }
+    View.OnClickListener videoSendOnClickListener = new View.OnClickListener() {
+
+        @Override
+        public void onClick(View v) {
+            Intent intent2 = new Intent(MainActivity.this,CameraActivity.class);
+            startActivity(intent2);
+
+        }
+    };
 
         @Override
         public void onBackPressed() {
             DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+
             if (drawer.isDrawerOpen(GravityCompat.START)) {
                 drawer.closeDrawer(GravityCompat.START);
             } else {
